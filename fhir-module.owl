@@ -1,0 +1,1661 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://hl7.org/fhir/"
+     xml:base="http://hl7.org/fhir"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://hl7.org/fhir"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://hl7.org/fhir/CodeableConcept.coding -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/CodeableConcept.coding">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Coding"/>
+        <dc:title>Code defined by a terminology system</dc:title>
+        <rdfs:comment>A reference to a code defined by a terminology system.</rdfs:comment>
+        <rdfs:label>CodeableConcept.coding</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/CodeableConcept.text -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/CodeableConcept.text">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/string"/>
+        <dc:title>Plain text representation of the concept</dc:title>
+        <rdfs:comment>A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.</rdfs:comment>
+        <rdfs:label>CodeableConcept.text</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Coding.code -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Coding.code">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Coding"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/code"/>
+        <dc:title>Symbol in syntax defined by the system</dc:title>
+        <rdfs:comment>A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).</rdfs:comment>
+        <rdfs:label>Coding.code</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Coding.display -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Coding.display">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Coding"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/string"/>
+        <dc:title>Representation defined by the system</dc:title>
+        <rdfs:comment>A representation of the meaning of the code in the system, following the rules of the system.</rdfs:comment>
+        <rdfs:label>Coding.display</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Coding.system -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Coding.system">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Coding"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/uri"/>
+        <dc:title>Identity of the terminology system</dc:title>
+        <rdfs:comment>The identification of the code system that defines the meaning of the symbol in the code.</rdfs:comment>
+        <rdfs:label>Coding.system</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/ConceptMap.status -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/ConceptMap.status">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/ConceptMap"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/code"/>
+        <dc:title>draft | active | retired | unknown</dc:title>
+        <rdfs:comment>The status of this concept map. Enables tracking the life-cycle of the content.</rdfs:comment>
+        <rdfs:label>ConceptMap.status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Condition.abatementDateTime -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Condition.abatementDateTime">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Condition"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/dateTime"/>
+        <rdfs:label>Condition.abatementDateTime</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Condition.asserter -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Condition.asserter">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Condition"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Person who asserts this condition</dc:title>
+        <rdfs:comment>Individual who is making the condition statement.</rdfs:comment>
+        <rdfs:label>Condition.asserter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Condition.category -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Condition.category">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Condition"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>problem-list-item | encounter-diagnosis</dc:title>
+        <rdfs:comment>A category assigned to the condition.</rdfs:comment>
+        <rdfs:label>Condition.category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Condition.clinicalStatus -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Condition.clinicalStatus">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Condition"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>active | recurrence | relapse | inactive | remission | resolved</dc:title>
+        <rdfs:comment>The clinical status of the condition.</rdfs:comment>
+        <rdfs:label>Condition.clinicalStatus</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Condition.code -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Condition.code">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Condition"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Identification of the condition, problem or diagnosis</dc:title>
+        <rdfs:comment>Identification of the condition, problem or diagnosis.</rdfs:comment>
+        <rdfs:label>Condition.code</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Condition.encounter -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Condition.encounter">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Condition"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Encounter created as part of</dc:title>
+        <rdfs:comment>The Encounter during which this Condition was created or to which the creation of this record is tightly associated.</rdfs:comment>
+        <rdfs:label>Condition.encounter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Condition.onsetDateTime -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Condition.onsetDateTime">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Condition"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/dateTime"/>
+        <rdfs:label>Condition.onsetDateTime</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Condition.subject -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Condition.subject">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Condition"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Who has the condition?</dc:title>
+        <rdfs:comment>Indicates the patient or group who the condition record is associated with.</rdfs:comment>
+        <rdfs:label>Condition.subject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Encounter.class -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Encounter.class">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Encounter"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Coding"/>
+        <dc:title>Classification of patient encounter</dc:title>
+        <rdfs:comment>Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.</rdfs:comment>
+        <rdfs:label>Encounter.class</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Encounter.partOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Encounter.partOf">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Encounter"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Another Encounter this encounter is part of</dc:title>
+        <rdfs:comment>Another Encounter of which this encounter is a part of (administratively or in time).</rdfs:comment>
+        <rdfs:label>Encounter.partOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Encounter.period -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Encounter.period">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Encounter"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Period"/>
+        <dc:title>The start and end time of the encounter</dc:title>
+        <rdfs:comment>The start and end time of the encounter.</rdfs:comment>
+        <rdfs:label>Encounter.period</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Encounter.status -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Encounter.status">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Encounter"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/code"/>
+        <dc:title>planned | arrived | triaged | in-progress | onleave | finished | cancelled +</dc:title>
+        <rdfs:comment>planned | arrived | triaged | in-progress | onleave | finished | cancelled +.</rdfs:comment>
+        <rdfs:label>Encounter.status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Encounter.subject -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Encounter.subject">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Encounter"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>The patient or group present at the encounter</dc:title>
+        <rdfs:comment>The patient or group present at the encounter.</rdfs:comment>
+        <rdfs:label>Encounter.subject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Encounter.type -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Encounter.type">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Encounter"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Specific type of encounter</dc:title>
+        <rdfs:comment>Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).</rdfs:comment>
+        <rdfs:label>Encounter.type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Location.address -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Location.address">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Location"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Address"/>
+        <dc:title>Physical location</dc:title>
+        <rdfs:comment>Physical location.</rdfs:comment>
+        <rdfs:label>Location.address</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Location.name -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Location.name">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Location"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/string"/>
+        <dc:title>Name of the location as used by humans</dc:title>
+        <rdfs:comment>Name of the location as used by humans. Does not need to be unique.</rdfs:comment>
+        <rdfs:label>Location.name</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Location.type -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Location.type">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Location"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Type of function performed</dc:title>
+        <rdfs:comment>Indicates the type of function performed at the location.</rdfs:comment>
+        <rdfs:label>Location.type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/MedicationStatement.category -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/MedicationStatement.category">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/MedicationStatement"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Type of medication usage</dc:title>
+        <rdfs:comment>Indicates where the medication is expected to be consumed or administered.</rdfs:comment>
+        <rdfs:label>MedicationStatement.category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/MedicationStatement.context -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/MedicationStatement.context">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/MedicationStatement"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Encounter / Episode associated with MedicationStatement</dc:title>
+        <rdfs:comment>The encounter or episode of care that establishes the context for this MedicationStatement.</rdfs:comment>
+        <rdfs:label>MedicationStatement.context</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/MedicationStatement.effectiveDateTime -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/MedicationStatement.effectiveDateTime">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/MedicationStatement"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/dateTime"/>
+        <rdfs:label>MedicationStatement.effectiveDateTime</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/MedicationStatement.effectivePeriod -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/MedicationStatement.effectivePeriod">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/MedicationStatement"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Period"/>
+        <rdfs:label>MedicationStatement.effectivePeriod</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/MedicationStatement.medicationCodeableConcept -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/MedicationStatement.medicationCodeableConcept">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/MedicationStatement"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <rdfs:label>MedicationStatement.medicationCodeableConcept</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/MedicationStatement.medicationReference -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/MedicationStatement.medicationReference">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/MedicationStatement"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <rdfs:label>MedicationStatement.medicationReference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/MedicationStatement.status -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/MedicationStatement.status">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/MedicationStatement"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/code"/>
+        <dc:title>active | completed | entered-in-error | intended | stopped | on-hold | unknown | not-taken</dc:title>
+        <rdfs:comment>A code representing the patient or other source&apos;s judgment about the state of the medication used that this statement is about.  Generally, this will be active or completed.</rdfs:comment>
+        <rdfs:label>MedicationStatement.status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/MedicationStatement.statusReason -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/MedicationStatement.statusReason">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/MedicationStatement"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Reason for current status</dc:title>
+        <rdfs:comment>Captures the reason for the current state of the MedicationStatement.</rdfs:comment>
+        <rdfs:label>MedicationStatement.statusReason</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/MedicationStatement.subject -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/MedicationStatement.subject">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/MedicationStatement"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Who is/was taking  the medication</dc:title>
+        <rdfs:comment>The person, animal or group who is/was taking the medication.</rdfs:comment>
+        <rdfs:label>MedicationStatement.subject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.category -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.category">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Classification of  type of observation</dc:title>
+        <rdfs:comment>A code that classifies the general type of observation being made.</rdfs:comment>
+        <rdfs:label>Observation.category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.code -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.code">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Type of observation (code / type)</dc:title>
+        <rdfs:comment>Describes what was observed. Sometimes this is called the observation &quot;name&quot;.</rdfs:comment>
+        <rdfs:label>Observation.code</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.effectiveDateTime -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.effectiveDateTime">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/dateTime"/>
+        <rdfs:label>Observation.effectiveDateTime</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.effectivePeriod -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.effectivePeriod">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Period"/>
+        <rdfs:label>Observation.effectivePeriod</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.encounter -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.encounter">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Healthcare event during which this observation is made</dc:title>
+        <rdfs:comment>The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made.</rdfs:comment>
+        <rdfs:label>Observation.encounter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.performer -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.performer">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Who is responsible for the observation</dc:title>
+        <rdfs:comment>Who was responsible for asserting the observed value as &quot;true&quot;.</rdfs:comment>
+        <rdfs:label>Observation.performer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.referenceRange -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.referenceRange">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <dc:title>Provides guide for interpretation</dc:title>
+        <rdfs:comment>Guidance on how to interpret the value by comparison to a normal or recommended range.  Multiple reference ranges are interpreted as an &quot;OR&quot;.   In other words, to represent two distinct target populations, two `referenceRange` elements would be used.</rdfs:comment>
+        <rdfs:label>Observation.referenceRange</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.status -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.status">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/code"/>
+        <dc:title>registered | preliminary | final | amended +</dc:title>
+        <rdfs:comment>The status of the result value.</rdfs:comment>
+        <rdfs:label>Observation.status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.subject -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.subject">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Who and/or what the observation is about</dc:title>
+        <rdfs:comment>The patient, or group of patients, location, or device this observation is about and into whose record the observation is placed. If the actual focus of the observation is different from the subject (or a sample of, part, or region of the subject), the `focus` element or the `code` itself specifies the actual focus of the observation.</rdfs:comment>
+        <rdfs:label>Observation.subject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.valueCodeableConcept -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.valueCodeableConcept">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <rdfs:label>Observation.valueCodeableConcept</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.valueQuantity -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.valueQuantity">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Quantity"/>
+        <rdfs:label>Observation.valueQuantity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation.valueString -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Observation.valueString">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Observation"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/string"/>
+        <rdfs:label>Observation.valueString</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Patient.address -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Patient.address">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Patient"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Address"/>
+        <dc:title>An address for the individual</dc:title>
+        <rdfs:comment>An address for the individual.</rdfs:comment>
+        <rdfs:label>Patient.address</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Patient.birthDate -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Patient.birthDate">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Patient"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/date"/>
+        <dc:title>The date of birth for the individual</dc:title>
+        <rdfs:comment>The date of birth for the individual.</rdfs:comment>
+        <rdfs:label>Patient.birthDate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Patient.gender -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Patient.gender">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Patient"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/code"/>
+        <dc:title>male | female | other | unknown</dc:title>
+        <rdfs:comment>Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.</rdfs:comment>
+        <rdfs:label>Patient.gender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Patient.generalPractitioner -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Patient.generalPractitioner">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Patient"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Patient&apos;s nominated primary care provider</dc:title>
+        <rdfs:comment>Patient&apos;s nominated care provider.</rdfs:comment>
+        <rdfs:label>Patient.generalPractitioner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Practitioner.birthDate -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Practitioner.birthDate">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Practitioner"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/date"/>
+        <dc:title>The date  on which the practitioner was born</dc:title>
+        <rdfs:comment>The date of birth for the practitioner.</rdfs:comment>
+        <rdfs:label>Practitioner.birthDate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Practitioner.identifier -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Practitioner.identifier">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Practitioner"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Identifier"/>
+        <dc:title>An identifier for the person as this agent</dc:title>
+        <rdfs:comment>An identifier that applies to this person in this role.</rdfs:comment>
+        <rdfs:label>Practitioner.identifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Practitioner.name -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Practitioner.name">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Practitioner"/>
+        <dc:title>The name(s) associated with the practitioner</dc:title>
+        <rdfs:comment>The name(s) associated with the practitioner.</rdfs:comment>
+        <rdfs:label>Practitioner.name</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Practitioner.qualification -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Practitioner.qualification">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Practitioner"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/PractitionerQualificationComponent"/>
+        <dc:title>Certification, licenses, or training pertaining to the provision of care</dc:title>
+        <rdfs:comment>The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.</rdfs:comment>
+        <rdfs:label>Practitioner.qualification</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Practitioner.qualification.code -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Practitioner.qualification.code">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/PractitionerQualificationComponent"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Coded representation of the qualification</dc:title>
+        <rdfs:comment>Coded representation of the qualification.</rdfs:comment>
+        <rdfs:label>Practitioner.qualification.code</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/PractitionerRole.location -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/PractitionerRole.location">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/PractitionerRole"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>The location(s) at which this practitioner provides care</dc:title>
+        <rdfs:comment>The location(s) at which this practitioner provides care.</rdfs:comment>
+        <rdfs:label>PractitionerRole.location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/PractitionerRole.practitioner -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/PractitionerRole.practitioner">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/PractitionerRole"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Practitioner that is able to provide the defined services for the organization</dc:title>
+        <rdfs:comment>Practitioner that is able to provide the defined services for the organization.</rdfs:comment>
+        <rdfs:label>PractitionerRole.practitioner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/PractitionerRole.specialty -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/PractitionerRole.specialty">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/PractitionerRole"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Specific specialty of the practitioner</dc:title>
+        <rdfs:comment>Specific specialty of the practitioner.</rdfs:comment>
+        <rdfs:label>PractitionerRole.specialty</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Procedure.category -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Procedure.category">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Procedure"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Classification of the procedure</dc:title>
+        <rdfs:comment>A code that classifies the procedure for searching, sorting and display purposes (e.g. &quot;Surgical Procedure&quot;).</rdfs:comment>
+        <rdfs:label>Procedure.category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Procedure.code -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Procedure.code">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Procedure"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+        <dc:title>Identification of the procedure</dc:title>
+        <rdfs:comment>The specific procedure that is performed. Use text if the exact nature of the procedure cannot be coded (e.g. &quot;Laparoscopic Appendectomy&quot;).</rdfs:comment>
+        <rdfs:label>Procedure.code</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Procedure.encounter -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Procedure.encounter">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Procedure"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Encounter created as part of</dc:title>
+        <rdfs:comment>The Encounter during which this Procedure was created or performed or to which the creation of this record is tightly associated.</rdfs:comment>
+        <rdfs:label>Procedure.encounter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Procedure.performedDateTime -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Procedure.performedDateTime">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Procedure"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/dateTime"/>
+        <rdfs:label>Procedure.performedDateTime</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Procedure.performer -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Procedure.performer">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Procedure"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/ProcedurePerformerComponent"/>
+        <dc:title>The people who performed the procedure</dc:title>
+        <rdfs:comment>Limited to &quot;real&quot; people rather than equipment.</rdfs:comment>
+        <rdfs:label>Procedure.performer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Procedure.performer.actor -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Procedure.performer.actor">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/ProcedurePerformerComponent"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>The reference to the practitioner</dc:title>
+        <rdfs:comment>The practitioner who was involved in the procedure.</rdfs:comment>
+        <rdfs:label>Procedure.performer.actor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Procedure.status -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Procedure.status">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Procedure"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/code"/>
+        <dc:title>preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown</dc:title>
+        <rdfs:comment>A code specifying the state of the procedure. Generally, this will be the in-progress or completed state.</rdfs:comment>
+        <rdfs:label>Procedure.status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Procedure.subject -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Procedure.subject">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Procedure"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/Reference"/>
+        <dc:title>Who the procedure was performed on</dc:title>
+        <rdfs:comment>The person, animal or group on which the procedure was performed.</rdfs:comment>
+        <rdfs:label>Procedure.subject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Quantity.unit -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Quantity.unit">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Quantity"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/string"/>
+        <dc:title>Unit representation</dc:title>
+        <rdfs:comment>A human-readable form of the unit.</rdfs:comment>
+        <rdfs:label>Quantity.unit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/Quantity.value -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/Quantity.value">
+        <rdfs:domain rdf:resource="http://hl7.org/fhir/Quantity"/>
+        <rdfs:range rdf:resource="http://hl7.org/fhir/decimal"/>
+        <dc:title>Numerical value (with implicit precision)</dc:title>
+        <rdfs:comment>The value of the measured amount. The value includes an implicit precision in the presentation of the value.</rdfs:comment>
+        <rdfs:label>Quantity.value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://hl7.org/fhir/link -->
+
+
+    <owl:ObjectProperty rdf:about="http://hl7.org/fhir/link">
+        <dc:title>URI of a reference</dc:title>
+        <rdfs:label>link</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://hl7.org/fhir/value -->
+
+
+    <owl:DatatypeProperty rdf:about="http://hl7.org/fhir/value">
+        <dc:title>Terminal data value</dc:title>
+        <rdfs:label>fhir:value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://hl7.org/fhir/Address -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Address">
+        <dc:title>An address expressed using postal conventions (as opposed to GPS or other location definition formats)</dc:title>
+        <rdfs:comment>An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.</rdfs:comment>
+        <rdfs:label>Address</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Age -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Age">
+        <rdfs:subClassOf rdf:resource="http://hl7.org/fhir/Quantity"/>
+        <dc:title>A duration of time during which an organism (or a process) has existed</dc:title>
+        <rdfs:comment>A duration of time during which an organism (or a process) has existed.</rdfs:comment>
+        <rdfs:label>Age</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/CodeableConcept -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/CodeableConcept">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/CodeableConcept.coding"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Coding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/CodeableConcept.text"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:title>Concept - reference to a terminology or just  text</dc:title>
+        <rdfs:comment>A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.</rdfs:comment>
+        <rdfs:label>CodeableConcept</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Coding -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Coding">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Coding.code"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Coding.display"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Coding.system"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/uri"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:title>A reference to a code defined by a terminology system</dc:title>
+        <rdfs:comment>A reference to a code defined by a terminology system.</rdfs:comment>
+        <rdfs:label>Coding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/ConceptMap -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/ConceptMap">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/ConceptMap.status"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A statement of relationships from one set of concepts to one or more other concepts - either concepts in code systems, or data element/data element concepts, or classes in class models.</rdfs:comment>
+        <rdfs:label>ConceptMap</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Condition -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Condition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Condition.subject"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Condition.asserter"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Condition.category"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Condition.clinicalStatus"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Condition.code"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Condition.encounter"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.</rdfs:comment>
+        <rdfs:label>Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Count -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Count">
+        <rdfs:subClassOf rdf:resource="http://hl7.org/fhir/Quantity"/>
+        <dc:title>A measured or measurable amount</dc:title>
+        <rdfs:comment>A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.</rdfs:comment>
+        <rdfs:label>Count</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Distance -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Distance">
+        <rdfs:subClassOf rdf:resource="http://hl7.org/fhir/Quantity"/>
+        <dc:title>A length - a value with a unit that is a physical distance</dc:title>
+        <rdfs:comment>A length - a value with a unit that is a physical distance.</rdfs:comment>
+        <rdfs:label>Distance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Duration -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Duration">
+        <rdfs:subClassOf rdf:resource="http://hl7.org/fhir/Quantity"/>
+        <dc:title>A length of time</dc:title>
+        <rdfs:comment>A length of time.</rdfs:comment>
+        <rdfs:label>Duration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Encounter -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Encounter">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Encounter.class"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/Coding"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Encounter.status"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Encounter.partOf"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Encounter.period"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Period"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Encounter.subject"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Encounter.type"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.</rdfs:comment>
+        <rdfs:label>Encounter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Identifier -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Identifier">
+        <dc:title>An identifier intended for computation</dc:title>
+        <rdfs:comment>An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers.</rdfs:comment>
+        <rdfs:label>Identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Location -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Location">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Location.address"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Address"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Location.name"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Location.type"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.</rdfs:comment>
+        <rdfs:label>Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/MedicationStatement -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/MedicationStatement">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://hl7.org/fhir/MedicationStatement.medicationCodeableConcept"/>
+                        <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://hl7.org/fhir/MedicationStatement.medicationReference"/>
+                        <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://hl7.org/fhir/MedicationStatement.effectiveDateTime"/>
+                        <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/dateTime"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://hl7.org/fhir/MedicationStatement.effectivePeriod"/>
+                        <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Period"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/MedicationStatement.status"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/MedicationStatement.subject"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/MedicationStatement.category"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/MedicationStatement.context"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/MedicationStatement.statusReason"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A record of a medication that is being consumed by a patient.   A MedicationStatement may indicate that the patient may be taking the medication now or has taken the medication in the past or will be taking the medication in the future.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay.   The medication information may come from sources such as the patient&apos;s memory, from a prescription bottle,  or from a list of medications the patient, clinician or other party maintains. 
+
+The primary difference between a medication statement and a medication administration is that the medication administration has complete administration information and is based on actual administration information from the person who administered the medication.  A medication statement is often, if not always, less specific.  There is no required date/time when the medication was administered, in fact we only know that a source has reported the patient is taking this medication, where details such as time, quantity, or rate or even medication product may be incomplete or missing or less precise.  As stated earlier, the medication statement information may come from the patient&apos;s memory, from a prescription bottle or from a list of medications the patient, clinician or other party maintains.  Medication administration is more formal and is not missing detailed information.</rdfs:comment>
+        <rdfs:label>MedicationStatement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/MoneyQuantity -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/MoneyQuantity">
+        <rdfs:subClassOf rdf:resource="http://hl7.org/fhir/Quantity"/>
+        <dc:title>An amount of money. With regard to precision, see [Decimal Precision](datatypes.html#precision)</dc:title>
+        <rdfs:comment>There SHALL be a code if there is a value and it SHALL be an expression of currency.  If system is present, it SHALL be ISO 4217 (system = &quot;urn:iso:std:iso:4217&quot; - currency).</rdfs:comment>
+        <rdfs:label>MoneyQuantity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Observation -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Observation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Observation.code"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Observation.status"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Observation.category"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Observation.encounter"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Observation.performer"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Observation.subject"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Measurements and simple assertions made about a patient, device or other subject.</rdfs:comment>
+        <rdfs:label>Observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Patient -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Patient">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Patient.address"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Address"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Patient.birthDate"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Patient.gender"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Patient.generalPractitioner"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Demographics and other administrative information about an individual or animal receiving care or other health-related services.</rdfs:comment>
+        <rdfs:label>Patient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Period -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Period">
+        <dc:title>Time range defined by start and end date/time</dc:title>
+        <rdfs:comment>A time period defined by a start and end date and optionally time.</rdfs:comment>
+        <rdfs:label>Period</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Practitioner -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Practitioner">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Practitioner.birthDate"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Practitioner.identifier"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Identifier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Practitioner.qualification"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/PractitionerQualificationComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A person who is directly or indirectly involved in the provisioning of healthcare.</rdfs:comment>
+        <rdfs:label>Practitioner</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/PractitionerQualificationComponent -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/PractitionerQualificationComponent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Practitioner.qualification.code"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.</rdfs:comment>
+        <rdfs:label>PractitionerQualificationComponent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/PractitionerRole -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/PractitionerRole">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/PractitionerRole.location"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/PractitionerRole.practitioner"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/PractitionerRole.specialty"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A specific set of Roles/Locations/specialties/services that a practitioner may perform at an organization for a period of time.</rdfs:comment>
+        <rdfs:label>PractitionerRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Procedure -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Procedure">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Procedure.status"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Procedure.subject"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Procedure.category"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Procedure.code"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/CodeableConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Procedure.encounter"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Procedure.performer"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/ProcedurePerformerComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.</rdfs:comment>
+        <rdfs:label>Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/ProcedurePerformerComponent -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/ProcedurePerformerComponent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Procedure.performer.actor"/>
+                <owl:someValuesFrom rdf:resource="http://hl7.org/fhir/Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Limited to &quot;real&quot; people rather than equipment.</rdfs:comment>
+        <rdfs:label>ProcedurePerformerComponent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Quantity -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Quantity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Quantity.unit"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/Quantity.value"/>
+                <owl:allValuesFrom rdf:resource="http://hl7.org/fhir/decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:title>A measured or measurable amount</dc:title>
+        <rdfs:comment>A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.</rdfs:comment>
+        <rdfs:label>Quantity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/Reference -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/Reference">
+        <dc:title>A reference from one resource to another</dc:title>
+        <rdfs:comment>A reference from one resource to another.</rdfs:comment>
+        <rdfs:label>Reference</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/SimpleQuantity -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/SimpleQuantity">
+        <rdfs:subClassOf rdf:resource="http://hl7.org/fhir/Quantity"/>
+        <dc:title>A fixed quantity (no comparator)</dc:title>
+        <rdfs:comment>The comparator is not used on a SimpleQuantity</rdfs:comment>
+        <rdfs:label>SimpleQuantity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/code -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/code">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/value"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                        <owl:withRestrictions rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A string which has at least one character and no leading or trailing whitespace and where there is no whitespace other than single spaces in the contents</rdfs:comment>
+        <rdfs:label>code</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/date -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/date">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/value"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                        <owl:withRestrictions rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A date or partial date (e.g. just year or year + month). There is no time zone. The format is a union of the schema types gYear, gYearMonth and date.  Dates SHALL be valid dates.</rdfs:comment>
+        <rdfs:label>date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/dateTime -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/dateTime">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/value"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                        <owl:withRestrictions rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.</rdfs:comment>
+        <rdfs:label>dateTime</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/decimal -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/decimal">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/value"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                        <owl:withRestrictions rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A rational number with implicit precision</rdfs:comment>
+        <rdfs:label>decimal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/string -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/string">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/value"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                        <owl:withRestrictions rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A sequence of Unicode characters</rdfs:comment>
+        <rdfs:label>string</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://hl7.org/fhir/uri -->
+
+
+    <owl:Class rdf:about="http://hl7.org/fhir/uri">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://hl7.org/fhir/value"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                        <owl:withRestrictions rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>String of characters used to identify a name or a resource</rdfs:comment>
+        <rdfs:label>uri</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.20) https://github.com/owlcs/owlapi/ -->
+
+
