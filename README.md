@@ -1,4 +1,4 @@
-# PP-OBDA Specifications and OMOP CDM to FHIR Mapping with policies
+# PPOBDA Specifications and OMOP CDM to FHIR Mapping with policies
 
 ## Overview
 
@@ -11,7 +11,7 @@ The objective of this project is to define and implement **Ontology-Based Data A
    
 3. **Metadata from MIMIC-III**: Extracted metadata from the **MIMIC-III dataset** to support the mapping process and provide additional context for the OBDA framework.(Can be obtained from completing a course https://wiki.knox.cs.aau.dk/mimic-iii_extraction/MIMIC-III)
 
-4. **PP-OBDA Specifications**: The project includes a set of **Policy JSON files**, which define **denial policies** and **access restrictions** for data access. These policies ensure compliance with access rules and regulations. (Json file with policies and expected new mapping with embessing of polices are in files)
+4. **PPOBDA Specifications**: The project includes a set of **Policy JSON files**, which define **denial policies** and **access restrictions** for data access. These policies ensure compliance with access rules and regulations. (Json file with policies and expected new mapping with embessing of polices are in files)
 
 ### Goal:
 The ultimate goal of this work is to enable experiments and data retrieval through **Ontology-Based Data Access (OBDA)** systems that integrate OMOP CDM with FHIR and respect the provided **denial policies**.
