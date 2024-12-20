@@ -1,34 +1,71 @@
-# PPOBDA Specifications and OMOP CDM to FHIR Mapping with policies
+# PPOBDA Specifications and OMOP CDM to FHIR Mapping with Policies
 
 ## Overview
 
-The objective of this project is to define and implement **Ontology-Based Data Access (OBDA)** using the **OMOP Common Data Model (CDM)** and the **FHIR Ontology**. As part of this effort, we focus on the integration of **denial policies** within the OBDA framework through **Policy JSON files**. These policies govern data access rules and restrictions.
+This project defines and implements **Ontology-Based Data Access (OBDA)** using the **OMOP Common Data Model (CDM)** and the **FHIR Ontology**. A key focus of this effort is integrating **denial policies** into the OBDA framework via **Policy JSON files** to govern data access rules and restrictions.
 
-### Steps to use:
-1. **FHIR Ontology Mapping**: We have mapped the **OMOP CDM** to the **FHIR Ontology**, ensuring that the healthcare data modeled in OMOP CDM can be accessed and queried in a FHIR-compliant way. The mappings include relevant fragments of the FHIR Ontology.(Given in files)
+---
+
+## Specifications
+
+1. **FHIR Ontology Mapping**:  
+   The **OMOP CDM** has been mapped to the **FHIR Ontology** to enable healthcare data modeled in OMOP CDM to be accessed and queried in a FHIR-compliant way. This mapping was achieved using resources such as [MIMIC-OMOP](https://github.com/MIT-LCP/mimic-omop).  
+   - Relevant fragments of the FHIR Ontology are included (files: `fhir.ttl`).
+   - Refer to [FHIROntopOMOP](https://github.com/fhircat/FHIROntopOMOP/tree/main) for the mappings used.
+
+2. **Module Extraction**:  
+   To streamline the mapping process, we applied module extraction techniques to selectively extract the necessary parts of the FHIR Ontology.  
+   - Files: `FHIR Modular Extractor` and `FHIR-module.owl`.
+
+3. **Metadata from MIMIC-III**:  
+   Metadata from the **MIMIC-III dataset** was extracted to support the mapping and provide context for the OBDA framework.  
+   - Access the MIMIC-III dataset via this [course](https://wiki.knox.cs.aau.dk/mimic-iii_extraction/MIMIC-III).  
+   *Note: Access is subject to privacy regulations.*
+
+4. **PPOBDA Specifications**:  
+   A collection of **Policy JSON files** defines denial policies and access restrictions to ensure compliance with data access regulations.  
+   - Example: Policy `p_1` denies access to combinations of gender and address. A sample modified mapping file with `p_1` embedded is included.
+
+---
+
+## Goal
+
+The primary goal is to enable data experiments and retrieval using **Ontology-Based Data Access (OBDA)** systems that integrate **OMOP CDM** with **FHIR Ontology**, adhering to the defined denial policies.
+
+---
+
+## How to Use
+
+1. Clone the repository:  
+   [PPOBDA with Ontop](https://github.com/divyabaura/PPOBDA-with-Ontop).
    
-2. **Module Extraction**: We applied module extraction techniques to selectively extract the necessary parts of the FHIR Ontology that are relevant to the mapping, thus streamlining the process and ensuring we focus only on the essential fragments.(Given in files)
-   
-3. **Metadata from MIMIC-III**: Extracted metadata from the **MIMIC-III dataset** to support the mapping process and provide additional context for the OBDA framework.(Can be obtained from completing a course https://wiki.knox.cs.aau.dk/mimic-iii_extraction/MIMIC-III)
+2. Follow these steps:
+   - Use the FHIR Ontology and mappings provided in the first specification point.
+   - Integrate the MIMIC-III dataset and JSON policy files.
+   - Run the implementation to produce the new mapping file (`.obda`) with embedded denial policies.
 
-4. **PPOBDA Specifications**: The project includes a set of **Policy JSON files**, which define **denial policies** and **access restrictions** for data access. These policies ensure compliance with access rules and regulations. (Json file with policies and expected new mapping with embessing of polices are in files)
-
-### Goal:
-The ultimate goal of this work is to enable experiments and data retrieval through **Ontology-Based Data Access (OBDA)** systems that integrate OMOP CDM with FHIR and respect the provided **denial policies**.
+3. Example:  
+   The repository includes an example of a modified mapping file where the first policy (`p_1`)—denying combinations of gender and address—is applied. Follow the same approach to apply other policies.
 
 ---
 
 ## Project Structure
 
-- **FHIR Ontology Fragments**: The necessary FHIR classes and relationships extracted using module extraction techniques. These include data types, identifiers, practitioners, locations, and more, necessary for the mapping to OMOP CDM.
-  
-- **OMOP to FHIR Mappings**: These files provide the relationships between the **OMOP CDM** and **FHIR Ontology**, which are essential for the integration of healthcare data.
+- **FHIR Ontology Fragments**:  
+  Necessary FHIR classes and relationships extracted via module extraction techniques, covering data types, identifiers, practitioners, locations, etc.
 
-- **PP-OBDA Policy Files**: The **denial policies** in JSON format that govern which data can be accessed by different users or systems. These policies ensure compliance with access rules and regulations.
+- **OMOP to FHIR Mappings**:  
+  Files defining relationships between OMOP CDM and FHIR Ontology, essential for data integration.
 
-- **Metadata Extraction Scripts**: These scripts extract the relevant metadata from the **MIMIC-III dataset** that is used in the mapping and OBDA system.
+- **PPOBDA Policy Files**:  
+  JSON files defining denial policies to govern access and ensure compliance with regulations.
 
-- **SPARQL Queries**: Predefined SPARQL queries that are aligned with the **FHIR Ontology** and the mappings. These queries allow users to retrieve data based on the OBDA framework and the denial policies.
+- **Metadata Extraction Scripts**:  
+  Scripts to extract metadata from the MIMIC-III dataset, aiding the mapping and OBDA framework.
+
+- **SPARQL Queries**:  
+  Predefined queries aligned with the FHIR Ontology and mappings, enabling data retrieval within the OBDA framework while adhering to denial policies.
 
 ---
 
+By following these steps and utilizing the provided resources, you can successfully implement OBDA with integrated denial policies and generate compliant policy embedded mappings.
