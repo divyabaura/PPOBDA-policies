@@ -371,6 +371,11 @@ target     fhir:CodeableConcept/{concept_id}/CodeableConcept.coding fhir:Coding.
 source     SELECT v1."concept_id" AS "concept_id"
            FROM "concept" v1
 
+mappingId  http://hl7.org/fhir/Procedure.code
+target     fhir:Procedure/{procedure_occurrence_id} fhir:Procedure.code fhir:CodeableConcept/{procedure_concept_id} .
+source     SELECT v1."procedure_concept_id" AS "procedure_concept_id", v1."procedure_occurrence_id" AS "procedure_occurrence_id"
+           FROM "procedure_occurrence" v1
+
 mappingId  http://hl7.org/fhir/Coding.system
 target     fhir:CodeableConcept/{concept_id}/CodeableConcept.coding fhir:Coding.system fhir:CodeableConcept/{concept_id}/CodeableConcept.coding/Coding.system .
 source     SELECT v1."concept_id" AS "concept_id"
@@ -422,6 +427,11 @@ target     fhir:Condition/{condition_occurrence_id} fhir:Condition.subject fhir:
 source     SELECT v1."condition_occurrence_id" AS "condition_occurrence_id"
            FROM "condition_occurrence" v1
 
+mappingId  http://hl7.org/fhir/Procedure.subject
+target     fhir:Procedure/{procedure_occurrence_id} fhir:Procedure.subject fhir:Procedure/{procedure_occurrence_id}/Procedure.subject .
+source     SELECT v1."procedure_occurrence_id" AS "procedure_occurrence_id"
+           FROM "procedure_occurrence" v1
+
 mappingId  http://hl7.org/fhir/Quantity
 target     fhir:Observation/{measurement_id}/Observation.valueQuantity a fhir:Quantity .
 source     SELECT v1."measurement_id" AS "measurement_id", v1."unit_concept_id" AS "unit_concept_id"
@@ -444,12 +454,6 @@ target     fhir:Encounter/{visit_occurrence_id} fhir:Encounter.status fhir:Encou
 source     SELECT v1."visit_occurrence_id" AS "visit_occurrence_id"
            FROM "visit_occurrence" v1
 
-mappingId  http://hl7.org/fhir/Patient.address
-target     fhir:Patient/{person_id} fhir:Patient.address fhir:Location/{location_id}/Location.address .
-source     SELECT v1."location_id" AS "location_id", v1."person_id" AS "person_id"
-           FROM "person" v1
-           WHERE v1."location_id" IS NOT NULL
-
 mappingId  http://hl7.org/fhir/Condition.encounter
 target     fhir:Condition/{condition_occurrence_id} fhir:Condition.encounter fhir:Condition/{condition_occurrence_id}/Condition.encounter .
 source     SELECT v1."condition_occurrence_id" AS "condition_occurrence_id"
@@ -464,6 +468,91 @@ mappingId  http://hl7.org/fhir/Encounter
 target     fhir:Encounter/{visit_occurrence_id} a fhir:Encounter .
 source     SELECT v1."visit_occurrence_id" AS "visit_occurrence_id"
            FROM "visit_occurrence" v1
+
+mappingId  http://hl7.org/fhir/link
+target     fhir:Patient/{person_id}/Patient.generalPractitioner fhir:link fhir:Practitioner/{provider_id} .
+source     SELECT v1."person_id" AS "person_id", v1."provider_id" AS "provider_id"
+           FROM "person" v1
+           WHERE v1."provider_id" IS NOT NULL
+
+mappingId  http://hl7.org/fhir/link1
+target     fhir:Patient/{person_id}/Patient.generalPractitioner fhir:link fhir:PractitionerRole/{provider_id} .
+source     SELECT v1."person_id" AS "person_id", v1."provider_id" AS "provider_id"
+           FROM "person" v1
+           WHERE v1."provider_id" IS NOT NULL
+
+mappingId  http://hl7.org/fhir/link2
+target     fhir:Encounter/{visit_occurrence_id}/Encounter.subject fhir:link fhir:Patient/{person_id} .
+source     SELECT v1."person_id" AS "person_id", v1."visit_occurrence_id" AS "visit_occurrence_id"
+           FROM "visit_occurrence" v1
+
+mappingId  http://hl7.org/fhir/link3
+target     fhir:Encounter/{visit_occurrence_id}/Encounter.performer fhir:link fhir:Practitioner/{provider_id} .
+source     SELECT v1."provider_id" AS "provider_id", v1."visit_occurrence_id" AS "visit_occurrence_id"
+           FROM "visit_occurrence" v1
+           WHERE v1."provider_id" IS NOT NULL
+
+mappingId  http://hl7.org/fhir/link4
+target     fhir:Encounter/{visit_occurrence_id}/Encounter.partOf fhir:link fhir:Encounter/{preceding_visit_occurrence_id} .
+source     SELECT v1."preceding_visit_occurrence_id" AS "preceding_visit_occurrence_id", v1."visit_occurrence_id" AS "visit_occurrence_id"
+           FROM "visit_occurrence" v1
+           WHERE v1."preceding_visit_occurrence_id" IS NOT NULL
+
+mappingId  http://hl7.org/fhir/link5
+target     fhir:Condition/{condition_occurrence_id}/Condition.subject fhir:link fhir:Patient/{person_id} .
+source     SELECT v1."condition_occurrence_id" AS "condition_occurrence_id", v1."person_id" AS "person_id"
+           FROM "condition_occurrence" v1
+
+mappingId  http://hl7.org/fhir/link6
+target     fhir:Condition/{condition_occurrence_id}/Condition.encounter fhir:link fhir:Encounter/{visit_occurrence_id} .
+source     SELECT v1."condition_occurrence_id" AS "condition_occurrence_id", v1."visit_occurrence_id" AS "visit_occurrence_id"
+           FROM "condition_occurrence" v1
+           WHERE v1."visit_occurrence_id" IS NOT NULL
+
+mappingId  http://hl7.org/fhir/link7
+target     fhir:Condition/{condition_occurrence_id}/Condition.asserter fhir:link fhir:Practitioner/{provider_id} .
+source     SELECT v1."condition_occurrence_id" AS "condition_occurrence_id", v1."provider_id" AS "provider_id"
+           FROM "condition_occurrence" v1
+           WHERE v1."provider_id" IS NOT NULL
+
+mappingId  http://hl7.org/fhir/link8
+target     fhir:Procedure/{procedure_occurrence_id}/Procedure.subject fhir:link fhir:Patient/{person_id} .
+source     SELECT v1."person_id" AS "person_id", v1."procedure_occurrence_id" AS "procedure_occurrence_id"
+           FROM "procedure_occurrence" v1
+
+mappingId  http://hl7.org/fhir/link9
+target     fhir:Procedure/{procedure_occurrence_id}/Procedure.encounter fhir:link fhir:Encounter/{visit_occurrence_id} .
+source     SELECT v1."procedure_occurrence_id" AS "procedure_occurrence_id", v1."visit_occurrence_id" AS "visit_occurrence_id"
+           FROM "procedure_occurrence" v1
+           WHERE v1."visit_occurrence_id" IS NOT NULL
+
+mappingId  http://hl7.org/fhir/link10
+target     fhir:Procedure/{procedure_occurrence_id}/Procedure.performer fhir:link fhir:Practitioner/{provider_id} .
+source     SELECT v1."procedure_occurrence_id" AS "procedure_occurrence_id", v1."provider_id" AS "provider_id"
+           FROM "procedure_occurrence" v1
+           WHERE v1."provider_id" IS NOT NULL
+
+mappingId  http://hl7.org/fhir/link11
+target     fhir:MedicationStatement/{drug_exposure_id}/MedicationStatement.subject fhir:link fhir:Patient/{person_id} .
+source     SELECT v1."drug_exposure_id" AS "drug_exposure_id", v1."person_id" AS "person_id"
+           FROM "drug_exposure" v1
+
+mappingId  http://hl7.org/fhir/link12
+target     fhir:Observation/{measurement_id}/Observation.subject fhir:link fhir:Patient/{person_id} .
+source     SELECT v1."measurement_id" AS "measurement_id", v1."person_id" AS "person_id"
+           FROM "measurement" v1
+
+mappingId  http://hl7.org/fhir/link13
+target     fhir:Observation/{measurement_id}/Observation.encounter fhir:link fhir:Encounter/{visit_occurrence_id} .
+source     SELECT v1."measurement_id" AS "measurement_id", v1."visit_occurrence_id" AS "visit_occurrence_id"
+           FROM "measurement" v1
+           WHERE v1."visit_occurrence_id" IS NOT NULL
+
+mappingId  http://hl7.org/fhir/link14
+target     fhir:Observation/{measurement_id}/Observation.performer fhir:link fhir:Practitioner/{provider_id} .
+source     SELECT v1."measurement_id" AS "measurement_id", v1."provider_id" AS "provider_id"
+           FROM "measurement" v1
+           WHERE v1."provider_id" IS NOT NULL
 
 mappingId  http://hl7.org/fhir/dateTime
 target     fhir:Condition/{condition_occurrence_id}/Condition.onsetDateTime a fhir:dateTime .
@@ -520,6 +609,12 @@ target     fhir:Procedure/{procedure_occurrence_id} fhir:Procedure.category fhir
 source     SELECT v1."procedure_occurrence_id" AS "procedure_occurrence_id", v1."procedure_type_concept_id" AS "procedure_type_concept_id"
            FROM "procedure_occurrence" v1
 
+mappingId  http://hl7.org/fhir/Patient.gender
+target     fhir:Patient/{person_id} fhir:Patient.gender fhir:Patient/{person_id}/Patient.gender .
+source     SELECT v1."location_id" AS "location_id", v1."person_id" AS "person_id"
+           FROM "person" v1
+           WHERE v1."location_id" IS NULL
+
 mappingId  http://hl7.org/fhir/Encounter.partOf
 target     fhir:Encounter/{visit_occurrence_id} fhir:Encounter.partOf fhir:Encounter/{visit_occurrence_id}/Encounter.partOf .
 source     SELECT v1."visit_occurrence_id" AS "visit_occurrence_id"
@@ -559,6 +654,11 @@ mappingId  http://hl7.org/fhir/CodeableConcept.text
 target     fhir:CodeableConcept/{concept_id} fhir:CodeableConcept.text fhir:CodeableConcept/{concept_id}/CodeableConcept.text .
 source     SELECT v1."concept_id" AS "concept_id"
            FROM "concept" v1
+
+mappingId  http://hl7.org/fhir/MedicationStatement.medicationCodeableConcept
+target     fhir:MedicationStatement/{drug_exposure_id} fhir:MedicationStatement.medicationCodeableConcept fhir:CodeableConcept/{drug_concept_id} .
+source     SELECT v1."drug_concept_id" AS "drug_concept_id", v1."drug_exposure_id" AS "drug_exposure_id"
+           FROM "drug_exposure" v1
 
 mappingId  http://hl7.org/fhir/Observation.performer
 target     fhir:Observation/{measurement_id} fhir:Observation.performer fhir:Observation/{measurement_id}/Observation.performer .
@@ -696,6 +796,11 @@ mappingId  http://hl7.org/fhir/Identifier
 target     fhir:Practitioner/{provider_id}/Practitioner.identifier a fhir:Identifier .
 source     SELECT v1."provider_id" AS "provider_id"
            FROM "provider" v1
+
+mappingId  http://hl7.org/fhir/Patient.birthDate
+target     fhir:Patient/{person_id} fhir:Patient.birthDate fhir:Patient/{person_id}/Patient.birthDate .
+source     SELECT v1."person_id" AS "person_id"
+           FROM "person" v1
 
 mappingId  http://hl7.org/fhir/date
 target     fhir:Patient/{person_id}/Patient.birthDate a fhir:date .
@@ -876,6 +981,11 @@ mappingId  http://hl7.org/fhir/ProcedurePerformerComponent
 target     fhir:Procedure/{procedure_occurrence_id}/Procedure.performer a fhir:ProcedurePerformerComponent .
 source     SELECT v1."procedure_occurrence_id" AS "procedure_occurrence_id"
            FROM "procedure_occurrence" v1
+
+mappingId  http://hl7.org/fhir/MedicationStatement.subject
+target     fhir:MedicationStatement/{drug_exposure_id} fhir:MedicationStatement.subject fhir:MedicationStatement/{drug_exposure_id}/MedicationStatement.subject .
+source     SELECT v1."drug_exposure_id" AS "drug_exposure_id"
+           FROM "drug_exposure" v1
 
 mappingId  http://hl7.org/fhir/Quantity.value
 target     fhir:Observation/{measurement_id}/Observation.valueQuantity fhir:Quantity.value fhir:Observation/{measurement_id}/Observation.valueQuantity/Quantity.value .
