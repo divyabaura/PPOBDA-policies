@@ -30,6 +30,7 @@ ORDER BY DESC(?opioid_rxs)
 
 ##Query 2: Practitioner Specialties
 
+```sparql
 PREFIX : <http://hl7.org/fhir/>
 
 SELECT ?role ?specialtyName
@@ -42,6 +43,7 @@ WHERE {
 
 ##Query 3: Top 10 Conditions by Patient Count
 
+```sparql
 PREFIX fhir: <http://hl7.org/fhir/>
 PREFIX cs: <http://hl7.org/orim/codesystem/>
 
@@ -61,6 +63,7 @@ LIMIT 10
 
 ##Query 4: Monthly Count of Prescriptions
 
+```sparql
 PREFIX fhir: <http://hl7.org/fhir/>
 
 SELECT ?yearMonth (COUNT(*) AS ?prescriptions)
