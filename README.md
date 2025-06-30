@@ -60,7 +60,7 @@ Clone the repository from GitHub:
 - Predefined SPARQL queries from [this resource](https://github.com/fhircat/FHIROntopOMOP/blob/main/evaluation/jbi-2022-queries.md) are available in the file `SparqlQueries.md`.
 
 ### 4. Example  
-The repository includes a sample modified mapping file (`Mapping1.obda`) where a role based policy for a 'pharmacist' restricting the combination of gender and address is applied. You can follow a similar approach to apply additional role based policies. 
+The repository includes a sample modified mapping file (`RBACMapping1.obda`) where a role based policy for a 'pharmacist' restricting the combination of gender and address is applied. You can follow a similar approach to apply additional role based policies. 
 
 
 ---
