@@ -15,19 +15,15 @@ public class MappingCombinerRBAC {
 
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter number of mapping files: ");
-        int numFiles = scanner.nextInt();
-        scanner.nextLine();
-
-        List<MappingFile> mappingFiles = new ArrayList<>();
-        for (int i = 0; i < numFiles; i++) {
-            System.out.print("\nEnter path for mapping file #" + (i+1) + ": ");
-            String filePath = scanner.nextLine();
-
-            System.out.print("Enter role for mapping file #" + (i+1) + ": ");
-            String role = scanner.nextLine();
-
-            mappingFiles.add(new MappingFile(filePath, role));
+        
+        System.out.print("Enter path to mapping configuration file: ");
+        String configPath = scanner.nextLine().trim();
+        
+        List<MappingFile> mappingFiles = readConfigurationFile(configPath);
+        
+        if (mappingFiles.isEmpty()) {
+            System.out.println("No valid mapping files found in configuration.");
+            return;
         }
 
         String outputPath = "RBACmappings.obda";
