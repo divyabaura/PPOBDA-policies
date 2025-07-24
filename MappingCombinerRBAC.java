@@ -31,7 +31,35 @@ public class MappingCombinerRBAC {
         Files.write(Paths.get(outputPath), combinedMappings.getBytes(StandardCharsets.UTF_8));
         System.out.println("\nCombined mapping file created at: " + outputPath);
     }
-
+    private static List<MappingFile> readConfigurationFile(String configPath) throws IOException {
+        List<MappingFile> mappingFiles = new ArrayList<>();
+        List<String> lines = Files.readAllLines(Paths.get(configPath));
+        
+        for (String line : lines) {
+            // Skip empty lines and comments
+            if (line.trim().isEmpty() || line.trim().startsWith("#")) {
+                continue;
+            }
+            
+            String[] parts = line.split("=");
+            if (parts.length != 2) {
+                System.out.println("Skipping invalid line: " + line);
+                continue;
+            }
+            
+            String filePath = parts[0].trim();
+            String role = parts[1].trim();
+            
+            if (!Files.exists(Paths.get(filePath))) {
+                System.out.println("File not found: " + filePath);
+                continue;
+            }
+            
+            mappingFiles.add(new MappingFile(filePath, role));
+        }
+        
+        return mappingFiles;
+    }
     private static String combineMappingsWithRoles(List<MappingFile> mappingFiles) throws IOException {
         StringBuilder output = new StringBuilder();
         boolean firstFile = true;
