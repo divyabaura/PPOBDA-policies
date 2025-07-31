@@ -50,6 +50,8 @@ The primary objective is to enable **Role-Based Access Control for Virtual Knowl
 ### 1. Clone the Repository  
 Clone the repository from GitHub:
 [PPOBDA with Ontop](https://github.com/divyabaura/PPOBDA-with-Ontop).
+Use RBAC-PolicyExpansion java utility (present in this repository) instead of PolicyExpansion.
+RBAC-PolicyExpansion takes input role-specific policies (RP) then outputs mappings embedded with such policies.
 
 ### 2. Follow These Steps  
 - Use the FHIR Ontology and mappings provided in the specifications.
