@@ -1,4 +1,4 @@
-# PPVKG Specifications and OMOP CDM to FHIR Mapping with role based policies
+# RBAC-PPVKG Specifications and OMOP CDM to FHIR Mapping with role based policies
 
 ## Overview
 
